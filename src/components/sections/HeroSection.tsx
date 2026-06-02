@@ -92,30 +92,39 @@ export default function HeroSection() {
       <video ref={videoRef} className="absolute inset-0 w-full h-full object-cover scale-110"
         src="/media/vid1.mp4" muted loop playsInline preload="auto" aria-hidden="true" />
 
-      {/* Base overlay */}
+      {/* Warm cinematic brightness lift */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: 'rgba(245,235,210,0.08)', mixBlendMode: 'screen' }} />
+
+      {/* Base overlay — lighter, dreamy warm */}
       <div className="hero-overlay absolute inset-0" />
 
-      {/* Forest-green side vignette */}
+      {/* Warm golden haze left */}
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 75% 90% at 0% 55%, rgba(45,74,45,0.2) 0%, transparent 65%)' }} />
+        style={{ background: 'radial-gradient(ellipse 70% 80% at 0% 50%, rgba(196,112,42,0.14) 0%, transparent 70%)' }} />
 
-      {/* Center vignette */}
+      {/* Soft warm mist right */}
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse at center, transparent 30%, rgba(26,26,24,0.7) 100%)' }} />
+        style={{ background: 'radial-gradient(ellipse 60% 60% at 100% 30%, rgba(245,235,210,0.10) 0%, transparent 65%)' }} />
 
-      {/* Fog */}
+      {/* Subtle vignette center */}
+      <div className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse at center, transparent 35%, rgba(26,26,24,0.45) 100%)' }} />
+
+      {/* Atmospheric fog */}
       <div className="fog-1 absolute inset-0 pointer-events-none" />
       <div className="fog-2 absolute inset-0 pointer-events-none" />
       <div className="fog-3 absolute inset-0 pointer-events-none" />
 
-      {/* Particles */}
+      {/* Particles — warm golden dust */}
       <canvas ref={canvasRef} className="absolute inset-0 w-full h-full pointer-events-none"
-        style={{ mixBlendMode: 'screen', opacity: 0.55 }} aria-hidden="true" />
+        style={{ mixBlendMode: 'screen', opacity: 0.65 }} aria-hidden="true" />
 
-      {/* Light rays */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-10">
-        <div className="absolute h-full w-px top-0" style={{ left: '23%', background: 'linear-gradient(to bottom, transparent 0%, rgba(212,196,168,0.6) 45%, transparent 100%)' }} />
-        <div className="absolute h-full w-px top-0" style={{ left: '68%', background: 'linear-gradient(to bottom, transparent 5%, rgba(196,112,42,0.35) 55%, transparent 100%)' }} />
+      {/* Cinematic light rays */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-[0.13]">
+        <div className="absolute h-full w-px top-0" style={{ left: '22%', background: 'linear-gradient(to bottom, transparent 0%, rgba(245,235,210,0.8) 40%, transparent 100%)' }} />
+        <div className="absolute h-full w-px top-0" style={{ left: '67%', background: 'linear-gradient(to bottom, transparent 8%, rgba(196,112,42,0.55) 50%, transparent 100%)' }} />
+        <div className="absolute h-full w-0.5 top-0" style={{ left: '44%', background: 'linear-gradient(to bottom, transparent 0%, rgba(245,235,210,0.35) 50%, transparent 100%)' }} />
       </div>
 
       {/* Content */}
@@ -124,7 +133,7 @@ export default function HeroSection() {
           initial={{ opacity: 0, letterSpacing: '0.6em' }}
           animate={{ opacity: 1, letterSpacing: '0.32em' }}
           transition={{ duration: 2, delay: 0.6, ease: 'easeOut' }}
-          className="font-sans text-[10px] text-sand/65 tracking-[0.32em] uppercase mb-10"
+          className="font-sans text-[10px] text-sand/70 tracking-[0.32em] uppercase mb-10"
         >
           Wildlife Photography · Mentorship · Expeditions
         </motion.p>
@@ -150,14 +159,14 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -18 }}
               transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute inset-0 flex items-center justify-center font-sans text-[11px] text-sand/70 tracking-[0.28em] uppercase"
+              className="absolute inset-0 flex items-center justify-center font-sans text-[11px] text-sand/75 tracking-[0.28em] uppercase"
             >
               {roles[roleIdx]}
             </motion.p>
           </AnimatePresence>
         </div>
 
-        {/* CTAs */}
+        {/* CTAs — ultra minimal, no borders */}
         <motion.div
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
@@ -165,12 +174,12 @@ export default function HeroSection() {
           className="flex flex-col sm:flex-row gap-4 items-center"
         >
           <a href="#about"
-            className="font-sans text-xs tracking-[0.22em] uppercase text-warm-black bg-ivory px-9 py-4 hover:bg-sand transition-all duration-500">
+            className="font-sans text-xs tracking-[0.22em] uppercase text-warm-black bg-ivory/90 px-9 py-4 hover:bg-ivory transition-all duration-500 hover:shadow-[0_4px_30px_rgba(245,235,210,0.25)]">
             Explore the Journey
           </a>
           <a href="#gallery"
-            className="font-sans text-xs tracking-[0.22em] uppercase text-ivory/80 border border-ivory/20 px-9 py-4 hover:border-evening-orange/60 hover:text-ivory transition-all duration-500">
-            View Gallery
+            className="font-sans text-xs tracking-[0.22em] uppercase text-ivory/75 hover:text-ivory transition-all duration-500 px-4 py-4 opacity-80 hover:opacity-100">
+            View Gallery →
           </a>
         </motion.div>
       </div>
@@ -182,8 +191,8 @@ export default function HeroSection() {
         transition={{ duration: 1.2, delay: 3.2 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-10 scroll-cue"
       >
-        <span className="font-sans text-[9px] tracking-[0.4em] uppercase text-sand/40">Scroll</span>
-        <div className="w-px h-14 bg-gradient-to-b from-sand/50 to-transparent" />
+        <span className="font-sans text-[9px] tracking-[0.4em] uppercase text-sand/50">Scroll</span>
+        <div className="w-px h-14 bg-gradient-to-b from-sand/60 to-transparent" />
       </motion.div>
 
       {/* Audio toggle */}
@@ -195,18 +204,18 @@ export default function HeroSection() {
         aria-label={audioOn ? 'Mute ambient sound' : 'Play ambient forest sound'}
         className="absolute bottom-10 right-8 z-20 flex items-center gap-2.5 group"
       >
-        <span className="font-sans text-[9px] tracking-[0.3em] uppercase text-sand/40 group-hover:text-sand/70 transition-colors duration-300">
+        <span className="font-sans text-[9px] tracking-[0.3em] uppercase text-sand/45 group-hover:text-sand/80 transition-colors duration-300">
           {audioOn ? 'Sound On' : 'Ambient'}
         </span>
         <div className="relative w-5 h-5 flex items-center justify-center">
           {audioOn && <div className="audio-ripple absolute inset-0 rounded-full border border-evening-orange/40" />}
-          <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${audioOn ? 'bg-evening-orange' : 'bg-sand/40'}`} />
+          <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-300 ${audioOn ? 'bg-evening-orange' : 'bg-sand/45'}`} />
         </div>
       </motion.button>
 
-      {/* Bottom seamless fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-48 pointer-events-none z-10"
-        style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(26,26,24,1) 100%)' }} />
+      {/* Bottom seamless fade into light background */}
+      <div className="absolute bottom-0 left-0 right-0 h-56 pointer-events-none z-10"
+        style={{ background: 'linear-gradient(to bottom, transparent 0%, var(--ivory) 100%)' }} />
     </section>
   )
 }

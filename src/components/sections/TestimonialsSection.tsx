@@ -49,12 +49,12 @@ export default function TestimonialsSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative bg-warm-black py-32 md:py-52 overflow-hidden">
+    <section ref={sectionRef} className="relative bg-[#FAF7F2] py-32 md:py-52 overflow-hidden">
       {/* Ambient bg */}
       <div className="absolute inset-0 pointer-events-none">
         <Image src="/media/giant-male-elephant-at-sunse.webp" alt="" fill
           className="object-cover object-center opacity-[0.04]" sizes="100vw" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-b from-warm-black via-transparent to-warm-black" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F2] via-transparent to-[#FAF7F2]" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 md:px-16 text-center">
@@ -83,16 +83,17 @@ export default function TestimonialsSection() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="mb-12"
           >
-            <p className="font-editorial font-light text-ivory/90 leading-relaxed mb-10"
+            <p
+              className="font-editorial font-light text-charcoal/90 leading-relaxed mb-10"
               style={{ fontSize: 'clamp(1.3rem, 2.8vw, 2.1rem)' }}>
               {testimonials[active].quote}
             </p>
             <div className="flex flex-col items-center gap-2">
               <div className="w-6 h-px bg-evening-orange/40 mb-3" />
-              <p className="font-sans text-xs text-ivory/80 tracking-[0.18em] uppercase">
+              <p className="font-sans text-xs text-charcoal/80 tracking-[0.18em] uppercase">
                 {testimonials[active].name}
               </p>
-              <p className="font-sans text-[10px] text-sand/40 tracking-[0.15em]">
+              <p className="font-sans text-[10px] text-[#8B7A5E]/55 tracking-[0.15em]">
                 {testimonials[active].location} &nbsp;·&nbsp; {testimonials[active].tour}
               </p>
             </div>
@@ -107,7 +108,7 @@ export default function TestimonialsSection() {
               onClick={() => setActive(i)}
               aria-label={`Testimonial ${i + 1}`}
               className={`block transition-all duration-500 ${
-                i === active ? 'w-8 h-px bg-evening-orange' : 'w-3 h-px bg-sand/25 hover:bg-sand/50'
+                i === active ? 'w-8 h-px bg-evening-orange' : 'w-3 h-px bg-[#C8B89A]/40 hover:bg-[#C8B89A]/70'
               }`}
             />
           ))}

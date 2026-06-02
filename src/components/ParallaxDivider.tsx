@@ -39,7 +39,7 @@ export default function ParallaxDivider({
 
       {/* Deep overlay */}
       <div className="absolute inset-0"
-        style={{ background: 'linear-gradient(to bottom, rgba(26,26,24,0.72) 0%, rgba(26,26,24,0.45) 45%, rgba(26,26,24,0.72) 100%)' }} />
+        style={{ background: 'linear-gradient(to bottom, rgba(26,26,24,0.50) 0%, rgba(26,26,24,0.25) 45%, rgba(26,26,24,0.50) 100%)' }} />
 
       {/* Fog */}
       <div className="fog-3 absolute inset-0 pointer-events-none opacity-50" />

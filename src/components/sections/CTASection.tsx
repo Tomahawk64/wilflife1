@@ -21,7 +21,7 @@ export default function CTASection() {
           priority={false}
         />
         <div className="absolute inset-0"
-          style={{ background: 'linear-gradient(160deg, rgba(26,26,24,0.94) 0%, rgba(26,26,24,0.72) 50%, rgba(26,26,24,0.90) 100%)' }} />
+          style={{ background: 'linear-gradient(160deg, rgba(26,26,24,0.78) 0%, rgba(26,26,24,0.50) 50%, rgba(26,26,24,0.78) 100%)' }} />
       </div>
 
       {/* Fog layers for depth */}
@@ -78,11 +78,11 @@ export default function CTASection() {
             Join The Expedition
           </a>
           <a href="#mentorship"
-            className="font-sans text-xs tracking-[0.22em] uppercase text-ivory border border-ivory/25 px-10 py-4 hover:border-evening-orange/60 hover:text-ivory transition-all duration-500">
+            className="font-sans text-xs tracking-[0.22em] uppercase text-ivory/80 hover:text-ivory px-10 py-4 hover:bg-white/10 transition-all duration-500">
             Learn Wildlife Photography
           </a>
           <a href="#tours"
-            className="font-sans text-xs tracking-[0.22em] uppercase text-sand/60 hover:text-ivory border-b border-sand/20 hover:border-ivory/40 pb-px transition-all duration-500 self-center">
+          className="font-sans text-xs tracking-[0.22em] uppercase text-ivory hover:text-ivory transition-all duration-500 self-center opacity-70 hover:opacity-100">
             Explore Tours →
           </a>
         </motion.div>

@@ -126,7 +126,7 @@ function TourCard({ tour, index }: { tour: (typeof domesticTours)[0]; index: num
           {tour.description}
         </p>
         <div className="flex items-center gap-2 mt-0 opacity-0 group-hover:opacity-100 group-hover:mt-5 transition-all duration-500">
-          <a href="#contact" className="font-sans text-[10px] tracking-[0.22em] uppercase text-ivory/80 border-b border-ivory/25 pb-px hover:text-ivory hover:border-ivory/70 transition-colors">
+          <a href="#contact" className="font-sans text-[10px] tracking-[0.22em] uppercase text-ivory/80 hover:text-ivory transition-colors">
             Enquire Now
           </a>
           <span className="text-ivory/30 text-xs">→</span>
@@ -143,7 +143,7 @@ export default function ToursSection() {
   const intlInView = useInView(intlRef, { once: true, margin: '-10%' })
 
   return (
-    <section id="tours" className="relative bg-warm-black py-32 md:py-48 overflow-hidden">
+    <section id="tours" className="relative bg-[#FAF7F2] py-32 md:py-48 overflow-hidden">
       {/* Domestic */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-32 md:mb-48">
         <div ref={domesticRef} className="mb-20">
@@ -159,7 +159,7 @@ export default function ToursSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={domesticInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-editorial font-light text-ivory leading-tight max-w-xl"
+            className="font-editorial font-light text-charcoal leading-tight max-w-xl"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
             India&apos;s Wild Heart
@@ -176,9 +176,9 @@ export default function ToursSection() {
       {/* Divider */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-32 md:mb-48">
         <div className="flex items-center gap-8">
-          <div className="flex-1 h-px bg-sand/10" />
-          <span className="font-editorial italic text-sand/30 text-sm">across the world</span>
-          <div className="flex-1 h-px bg-sand/10" />
+          <div className="flex-1 h-px bg-[#C8B89A]/25" />
+          <span className="font-editorial italic text-[#C8B89A]/55 text-sm">across the world</span>
+          <div className="flex-1 h-px bg-[#C8B89A]/25" />
         </div>
       </div>
 
@@ -197,7 +197,7 @@ export default function ToursSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={intlInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-editorial font-light text-ivory leading-tight max-w-xl"
+            className="font-editorial font-light text-charcoal leading-tight max-w-xl"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
             Beyond Borders
@@ -206,7 +206,7 @@ export default function ToursSection() {
             initial={{ opacity: 0 }}
             animate={intlInView ? { opacity: 1 } : {}}
             transition={{ duration: 1, delay: 0.3 }}
-            className="font-sans text-sand/60 text-base leading-relaxed max-w-lg mt-6"
+            className="font-sans text-[#6B5E4A]/75 text-base leading-relaxed max-w-lg mt-6"
           >
             Premium small-group expeditions to the world&apos;s greatest wildlife destinations. 
             Crafted for serious photographers. Led personally by Tarun.

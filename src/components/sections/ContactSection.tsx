@@ -22,9 +22,9 @@ export default function ContactSection() {
   })
 
   return (
-    <section id="contact" ref={sectionRef} className="relative bg-warm-black py-32 md:py-52 overflow-hidden">
-      {/* Vertical accent lines */}
-      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-sand/8 to-transparent pointer-events-none hidden md:block" />
+    <section id="contact" ref={sectionRef} className="relative bg-[#FAF7F2] py-32 md:py-52 overflow-hidden">
+      {/* Vertical accent line */}
+      <div className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#C8B89A]/20 to-transparent pointer-events-none hidden md:block" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-16 grid md:grid-cols-2 gap-20 md:gap-32">
         {/* Left — info */}
@@ -34,13 +34,13 @@ export default function ContactSection() {
           </motion.p>
           <motion.h2
             {...fadeUp(0.1)}
-            className="font-editorial font-light text-ivory leading-tight mb-10"
+            className="font-editorial font-light text-charcoal leading-tight mb-10"
             style={{ fontSize: 'clamp(2.5rem, 4vw, 4rem)' }}
           >
             Let&apos;s Walk Into<br />the Wild Together
           </motion.h2>
 
-          <motion.div {...fadeUp(0.2)} className="space-y-6 text-sand/60 font-sans text-sm leading-relaxed">
+          <motion.div {...fadeUp(0.2)} className="space-y-6 text-[#6B5E4A]/75 font-sans text-sm leading-relaxed">
             <p>
               Whether you are enquiring about an upcoming expedition, seeking one-on-one mentorship, 
               or simply wanting to connect — reach out and Tarun will respond personally.
@@ -49,25 +49,25 @@ export default function ContactSection() {
 
           <motion.div {...fadeUp(0.35)} className="mt-12 space-y-5">
             <div>
-              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/30 mb-1">Email</p>
-              <a href="mailto:tarun@wildlens.com" className="font-sans text-sm text-sand/70 hover:text-ivory transition-colors">
+              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/50 mb-1">Email</p>
+              <a href="mailto:tarun@wildlens.com" className="font-sans text-sm text-[#6B5E4A]/80 hover:text-charcoal transition-colors">
                 tarun@wildlens.com
               </a>
             </div>
             <div>
-              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/30 mb-1">WhatsApp</p>
-              <a href="https://wa.me/919999999999" className="font-sans text-sm text-sand/70 hover:text-ivory transition-colors">
+              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/50 mb-1">WhatsApp</p>
+              <a href="https://wa.me/919999999999" className="font-sans text-sm text-[#6B5E4A]/80 hover:text-charcoal transition-colors">
                 +91 99999 99999
               </a>
             </div>
             <div>
-              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/30 mb-2">Follow the Journey</p>
+              <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/50 mb-2">Follow the Journey</p>
               <div className="flex gap-6">
                 {['Instagram', 'YouTube', 'Facebook'].map((platform) => (
                   <a
                     key={platform}
                     href="#"
-                    className="font-sans text-xs tracking-[0.15em] uppercase text-sand/40 hover:text-ivory transition-colors duration-300"
+                    className="font-sans text-xs tracking-[0.15em] uppercase text-[#8B7A5E]/55 hover:text-charcoal transition-colors duration-300"
                   >
                     {platform}
                   </a>
@@ -86,10 +86,10 @@ export default function ContactSection() {
               className="flex flex-col items-start gap-6 py-20"
             >
               <div className="w-12 h-px bg-evening-orange" />
-              <h3 className="font-editorial text-ivory text-3xl">
+              <h3 className="font-editorial text-charcoal text-3xl">
                 Message Received
               </h3>
-              <p className="font-sans text-sand/60 text-sm leading-relaxed">
+              <p className="font-sans text-[#6B5E4A]/70 text-sm leading-relaxed">
                 Tarun will reach out to you personally within 24-48 hours. The journey is about to begin.
               </p>
             </motion.div>
@@ -97,7 +97,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-8">
               {/* Name */}
               <div className="space-y-2">
-                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/40">
+                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/60">
                   Your Name
                 </label>
                 <input
@@ -105,14 +105,14 @@ export default function ContactSection() {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full bg-transparent border-b border-sand/20 py-3 font-sans text-sm text-ivory placeholder-sand/30 focus:border-sand/50 focus:outline-none transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-[#C8B89A]/35 py-3 font-sans text-sm text-charcoal placeholder-[#C8B89A]/50 focus:border-[#8B7A5E]/60 focus:outline-none transition-colors duration-300"
                   placeholder="Your full name"
                 />
               </div>
 
               {/* Email */}
               <div className="space-y-2">
-                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/40">
+                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/60">
                   Email Address
                 </label>
                 <input
@@ -120,20 +120,20 @@ export default function ContactSection() {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full bg-transparent border-b border-sand/20 py-3 font-sans text-sm text-ivory placeholder-sand/30 focus:border-sand/50 focus:outline-none transition-colors duration-300"
+                  className="w-full bg-transparent border-b border-[#C8B89A]/35 py-3 font-sans text-sm text-charcoal placeholder-[#C8B89A]/50 focus:border-[#8B7A5E]/60 focus:outline-none transition-colors duration-300"
                   placeholder="your@email.com"
                 />
               </div>
 
               {/* Interest */}
               <div className="space-y-2">
-                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/40">
+                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/60">
                   I&apos;m interested in
                 </label>
                 <select
                   value={formData.interest}
                   onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
-                  className="w-full bg-warm-black border-b border-sand/20 py-3 font-sans text-sm text-sand/70 focus:border-sand/50 focus:outline-none transition-colors duration-300 cursor-pointer"
+                  className="w-full bg-[#FAF7F2] border-b border-[#C8B89A]/35 py-3 font-sans text-sm text-[#6B5E4A] focus:border-[#8B7A5E]/60 focus:outline-none transition-colors duration-300 cursor-pointer"
                 >
                   <option value="">Select an interest</option>
                   <option value="domestic">Domestic Expeditions</option>
@@ -146,21 +146,21 @@ export default function ContactSection() {
 
               {/* Message */}
               <div className="space-y-2">
-                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/40">
+                <label className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/60">
                   Message
                 </label>
                 <textarea
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full bg-transparent border-b border-sand/20 py-3 font-sans text-sm text-ivory placeholder-sand/30 focus:border-sand/50 focus:outline-none transition-colors duration-300 resize-none"
+                  className="w-full bg-transparent border-b border-[#C8B89A]/35 py-3 font-sans text-sm text-charcoal placeholder-[#C8B89A]/50 focus:border-[#8B7A5E]/60 focus:outline-none transition-colors duration-300 resize-none"
                   placeholder="Tell me about your experience level and what you are looking for..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="font-sans text-xs tracking-[0.2em] uppercase text-warm-black bg-ivory px-10 py-4 hover:bg-sand transition-colors duration-500 w-full"
+                className="font-sans text-xs tracking-[0.2em] uppercase text-ivory bg-charcoal px-10 py-4 hover:bg-[#3D3D3D] transition-colors duration-500 w-full"
               >
                 Send Message
               </button>

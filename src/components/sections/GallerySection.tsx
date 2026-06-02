@@ -49,7 +49,7 @@ export default function GallerySection() {
   }, [lightboxIdx, closeLightbox, prevImage, nextImage])
 
   return (
-    <section id="gallery" ref={sectionRef} className="relative bg-warm-black py-32 md:py-48">
+    <section id="gallery" ref={sectionRef} className="relative bg-[#FAF7F2] py-32 md:py-48">
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-16 mb-16">
         <motion.p
@@ -62,7 +62,7 @@ export default function GallerySection() {
           <motion.h2
             initial={{ opacity: 0, y: 40 }} animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            className="font-editorial font-light text-ivory leading-tight"
+            className="font-editorial font-light text-charcoal leading-tight"
             style={{ fontSize: 'clamp(2.5rem, 5vw, 5rem)' }}
           >
             A World in Frames
@@ -79,8 +79,8 @@ export default function GallerySection() {
                 onClick={() => setActiveCategory(cat)}
                 className={`font-sans text-[10px] tracking-[0.25em] uppercase transition-all duration-400 pb-px ${
                   activeCategory === cat
-                    ? 'text-ivory border-b border-evening-orange'
-                    : 'text-sand/40 hover:text-sand/70 border-b border-transparent'
+                    ? 'text-charcoal after:block after:w-full after:h-px after:bg-evening-orange'
+                    : 'text-[#8B7A5E]/55 hover:text-[#6B5E4A]'
                 }`}
               >
                 {cat}
@@ -131,7 +131,7 @@ export default function GallerySection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.35 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-warm-black/96"
+            className="fixed inset-0 z-50 flex items-center justify-center bg-[#FAF7F2]/97 backdrop-blur-md"
             onClick={closeLightbox}
           >
             <motion.div
@@ -150,8 +150,8 @@ export default function GallerySection() {
               />
               {/* Caption */}
               <div className="flex items-center justify-between mt-4 px-1">
-                <p className="font-editorial italic text-sand/60 text-sm">{filtered[lightboxIdx].alt}</p>
-                <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-sand/35">
+                <p className="font-editorial italic text-[#6B5E4A]/70 text-sm">{filtered[lightboxIdx].alt}</p>
+                <p className="font-sans text-[10px] tracking-[0.2em] uppercase text-[#8B7A5E]/50">
                   {lightboxIdx + 1} / {filtered.length}
                 </p>
               </div>
@@ -160,19 +160,19 @@ export default function GallerySection() {
             {/* Nav arrows */}
             <button
               onClick={(e) => { e.stopPropagation(); prevImage() }}
-              className="absolute left-4 md:left-8 text-ivory/50 hover:text-ivory text-3xl font-light transition-colors duration-300"
+              className="absolute left-4 md:left-8 text-charcoal/40 hover:text-charcoal text-3xl font-light transition-colors duration-300"
               aria-label="Previous image"
             >‹</button>
             <button
               onClick={(e) => { e.stopPropagation(); nextImage() }}
-              className="absolute right-4 md:right-8 text-ivory/50 hover:text-ivory text-3xl font-light transition-colors duration-300"
+              className="absolute right-4 md:right-8 text-charcoal/40 hover:text-charcoal text-3xl font-light transition-colors duration-300"
               aria-label="Next image"
             >›</button>
 
             {/* Close */}
             <button
               onClick={closeLightbox}
-              className="absolute top-5 right-5 text-ivory/50 hover:text-ivory text-xl font-light tracking-wider transition-colors duration-300"
+              className="absolute top-5 right-5 text-charcoal/50 hover:text-charcoal text-xl font-light tracking-wider transition-colors duration-300"
               aria-label="Close lightbox"
             >✕</button>
           </motion.div>
