@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --ivory: #F5F0E8;
+  --sand: #D4C4A8;
+  --tan: #B8A88A;
+  --charcoal: #2C2C2C;
+  --forest-green: #2D4A2D;
+  --evening-orange: #C4702A;
+  --warm-black: #1A1A18;
+  --muted-gold: #A89060;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background-color: var(--warm-black);
+  color: var(--ivory);
+  font-family: var(--font-inter);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Lenis ─────────────────────────────────────── */
+html.lenis { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+/* ─── Typography ─────────────────────────────────── */
+.font-editorial {
+  font-family: var(--font-cormorant);
+  letter-spacing: -0.02em;
+}
+
+/* ─── Scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar { width: 2px; }
+::-webkit-scrollbar-track { background: var(--warm-black); }
+::-webkit-scrollbar-thumb { background: var(--evening-orange); border-radius: 2px; }
+
+/* ─── Selection ──────────────────────────────────── */
+::selection { background: rgba(196,112,42,0.25); color: var(--ivory); }
+
+/* ─── Cinematic hero overlay ─────────────────────── */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(26,26,24,0.05) 0%,
+    rgba(26,26,24,0.2) 35%,
+    rgba(26,26,24,0.65) 75%,
+    rgba(26,26,24,1) 100%
+  );
+}
+
+/* ─── Nav blur ───────────────────────────────────── */
+.nav-blur {
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid rgba(212,196,168,0.06);
+}
+
+/* ─── Grain texture overlay ──────────────────────── */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  animation: grainShift 0.5s steps(1) infinite;
+}
+
+@keyframes grainShift {
+  0%   { transform: translate(0,0); }
+  10%  { transform: translate(-3%,-3%); }
+  20%  { transform: translate(3%,3%); }
+  30%  { transform: translate(-3%,3%); }
+  40%  { transform: translate(3%,-3%); }
+  50%  { transform: translate(-3%,0); }
+  60%  { transform: translate(3%,0); }
+  70%  { transform: translate(0,-3%); }
+  80%  { transform: translate(0,3%); }
+  90%  { transform: translate(-3%,-3%); }
+  100% { transform: translate(0,0); }
+}
+
+/* ─── Fog layers ─────────────────────────────────── */
+@keyframes fogDrift1 {
+  0%,100% { transform: translateX(0%) translateY(0%); opacity: 0.18; }
+  33%     { transform: translateX(3%) translateY(-2%); opacity: 0.28; }
+  66%     { transform: translateX(-2%) translateY(1%); opacity: 0.14; }
+}
+@keyframes fogDrift2 {
+  0%,100% { transform: translateX(0%) scaleX(1); opacity: 0.12; }
+  50%     { transform: translateX(-4%) scaleX(1.08); opacity: 0.22; }
+}
+@keyframes fogDrift3 {
+  0%,100% { transform: translateX(0%) translateY(0); opacity: 0.1; }
+  40%     { transform: translateX(5%) translateY(-3%); opacity: 0.2; }
+  80%     { transform: translateX(-3%) translateY(2%); opacity: 0.08; }
+}
+
+.fog-1 {
+  background: radial-gradient(ellipse 120% 60% at 30% 60%, rgba(45,74,45,0.35) 0%, transparent 70%);
+  animation: fogDrift1 18s ease-in-out infinite;
+}
+.fog-2 {
+  background: radial-gradient(ellipse 100% 50% at 70% 40%, rgba(26,26,24,0.4) 0%, transparent 65%);
+  animation: fogDrift2 24s ease-in-out infinite;
+}
+.fog-3 {
+  background: radial-gradient(ellipse 80% 40% at 50% 80%, rgba(45,74,45,0.2) 0%, transparent 60%);
+  animation: fogDrift3 30s ease-in-out infinite;
+}
+
+/* ─── Parallax container ─────────────────────────── */
+.parallax-container { overflow: hidden; position: relative; }
+
+/* ─── Image hover zoom ───────────────────────────── */
+.img-zoom { overflow: hidden; }
+.img-zoom img { transition: transform 1s cubic-bezier(0.25,0.46,0.45,0.94); }
+.img-zoom:hover img { transform: scale(1.06); }
+
+/* ─── Section seamless blend ─────────────────────── */
+.section-blend-top::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 200px;
+  background: linear-gradient(to bottom, var(--warm-black), transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+.section-blend-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 200px;
+  background: linear-gradient(to top, var(--warm-black), transparent);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ─── Cinematic text glow ────────────────────────── */
+.text-glow {
+  text-shadow: 0 0 80px rgba(196,112,42,0.15), 0 0 160px rgba(196,112,42,0.08);
+}
+
+/* ─── Audio toggle ───────────────────────────────── */
+.audio-ripple {
+  animation: audioRipple 2s ease-out infinite;
+}
+@keyframes audioRipple {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ─── Expedition card hover line ─────────────────── */
+.expedition-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: var(--evening-orange);
+  transition: width 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.expedition-card:hover::after { width: 100%; }
+
+/* ─── Gallery hover ──────────────────────────────── */
+.gallery-item { position: relative; overflow: hidden; cursor: pointer; }
+.gallery-item img { transition: transform 1.2s cubic-bezier(0.16,1,0.3,1); }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item .gallery-caption {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,26,24,0.85) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+.gallery-item:hover .gallery-caption { opacity: 1; }
+
+/* ─── Scroll cue animation ───────────────────────── */
+@keyframes scrollCue {
+  0%   { transform: translateY(0); opacity: 1; }
+  50%  { transform: translateY(10px); opacity: 0.4; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.scroll-cue { animation: scrollCue 2.4s ease-in-out infinite; }
+
+/* ─── Stat counter line ──────────────────────────── */
+.stat-line {
+  position: relative;
+  padding-bottom: 1rem;
+}
+.stat-line::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 2rem; height: 1px;
+  background: rgba(196,112,42,0.4);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Section fade line */
+.section-divider {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, var(--tan), transparent);
+}
+
+/* Grain texture overlay */
+.grain-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.3;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+::-webkit-scrollbar-track {
+  background: var(--warm-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--tan);
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: rgba(196, 112, 42, 0.3);
+  color: var(--ivory);
+}
+
+/* Cinematic text clip */
+.text-clip {
+  overflow: hidden;
+}
+
+.text-clip > * {
+  display: block;
+}
+
+/* Soft glow effect */
+.glow-warm {
+  box-shadow: 0 0 60px rgba(196, 112, 42, 0.15);
+}
+
+/* Floating nav blur */
+.nav-blur {
+  backdrop-filter: blur(20px) saturate(1.2);
+  -webkit-backdrop-filter: blur(20px) saturate(1.2);
+}
